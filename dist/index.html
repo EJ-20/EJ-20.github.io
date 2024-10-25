@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/main.bundle.css">
   <script src="https://kit.fontawesome.com/4e5a72c756.js"></script>
+  <script src=""></script>
+  
+
 </head>
 
 <!-- Header -->
@@ -39,565 +42,577 @@
     </div>
   </nav>
 
-  <!-- Intro -->
-  <section class="hero is-primary">
-    <div class="hero-body">
+  <section>
+
+
+    <!-- Intro -->
+    <section id= "background-animation" class="hero is-primary">
+        <div class="container">
+          <div class="level">
+            <div class="level-item has-text-centered">
+              <figure class="image is-128x128">
+                <img class="is-rounded" src="img/me-big.jpg">
+              </figure>
+            </div>
+          </div>
+          <div class="columns has-text-centered">
+            <div class="column">
+              <h1 class="title is-1">
+                Erfan Jafar
+              </h1>
+              <h2 class="subtitle">
+                Software Developer, Programmer Analyst
+              </h2>
+              <p>
+                <a href="docs/resume.pdf" class="icon has-text-light" target="_blank">
+                  <i class="fas fa-file-word"></i> <strong>Resume</strong>
+                </a>
+              </p>
+            </div>
+          </div>
+
+      </div>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+      <script>
+        VANTA.NET({
+          el: "#background-animation",
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.00,
+          minWidth: 200.00,
+          scale: 1.00,
+          scaleMobile: 1.00
+      })
+      </script>
+    </section>
+
+    <!-- About me -->
+    <section class="section">
       <div class="container">
-        <div class="level">
+        <h1 class="title">About Me</h1>
+        <hr />
+        <p>Hi, I’m Erfan Jafar, a passionate Software Engineer based in St. John’s, NL, with a strong background in software development, system troubleshooting, and data analysis. 
+          I am currently pursuing a Bachelor of Science in Computer Science, with a minor in Business Administration at Memorial University of Newfoundland, 
+          and will graduate in December 2024.</p>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section">
+      <div class="container">
+        <h1 class="title">Experience</h1>
+        <hr />
+        <div class="card experience-card">
+          <div class="card-content">
+            <div class="media">
+              <div class="media-left">
+                <figure class="image is-48x48">
+                  <img src="img/innovmarine-logo.jpg" alt="Placeholder image">
+                </figure>
+              </div>
+              <div class="media-content">
+                <p class="title is-4">Innovmarine</p>
+                <p class="subtitle is-6">Junior Programmer Analyst Intern  | <time datetime="2023-01">January 2023</time> - <time
+                    datetime="2023-09">September 2023</time> </p>
+              </div>
+            </div>
+            <div class="content">
+              <p></p>
+              <ul>
+                <li>Collaborated on a cross-functional team to create a SAAS web application using JavaScript, C#, Razor, Bootstrap, and HTML.</li>
+                <li>Conducted code reviews, thorough testing, ensuring adherence to best practices, functionality, quality, and user satisfaction.</li>
+                <li>Managed SQL databases, optimizing schema design and performance, identified and resolved software bugs.</li>
+                <li>Contributed to comprehensive documentation for ETL softwares, web applications, and database processes.</li>
+                <li>Developed VBA and PowerQuery ETL transformations, enhancing data quality.</li>
+                <li>Used PowerBI for data visualization and building relations between tables from SQL servers.</li>
+              </ul>
+              <div class="tags">
+                <span class="tag">C#</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Razor</span>
+                <span class="tag">Bootstrap</span>
+                <span class="tag">HTML</span>
+                <span class="tag">PowerBI</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">PowerQuery</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card card-gap experience-card">
+          <div class="card-content">
+            <div class="media">
+              <div class="media-left">
+                <figure class="image is-48x48">
+                  <img src="img/geeksquad-logo.png" alt="Placeholder image">
+                </figure>
+              </div>
+              <div class="media-content">
+                <p class="title is-4">GeekSquad</p>
+                <p class="subtitle is-6">In-store and In-home Computer Technician | <time datetime="2021-10"> October 2021</time> - <time
+                    datetime="">Present</time></p>
+              </div>
+            </div>
+            <div class="content">
+              <p></p>
+              <ul>
+                <li>Diagnosed and resolved technical issues on laptops, desktops, and mobile devices, ensuring efficient service with an average 95% customer satisfaction rate.</li>
+                <li>Performed hardware repairs including hard drive replacements, RAM upgrades, and screen repairs, reducing service turnaround times by 20%.</li>
+                <li>Recommended appropriate technology solutions based on customer needs, contributing to an increase in sales of extended warranties and service plans by 10%.</li>
+                <li>Conducted home theater installations, including mounting TVs, setting up sound systems, and integrating smart home technologies for seamless entertainment experiences.</li>
+                <li>Managed multiple service appointments per day, adhering to strict schedules while maintaining high levels of service quality and professionalism.</li>
+              </ul>
+              <div class="tags">
+                <span class="tag">System Diagnostics</span>
+                <span class="tag">Incident Resolution</span>
+                <span class="tag">Problem Solving</span>
+                <span class="tag">Time Management</span>
+                <span class="tag">Client Relationship</span>
+                <span class="tag">Scheduling</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card card-gap experience-card">
+          <div class="card-content">
+            <div class="media">
+              <div class="media-left">
+                <figure class="image is-48x48">
+                  <img src="img/beefandbutter-logo.png" alt="Placeholder image">
+                </figure>
+              </div>
+              <div class="media-content">
+                <p class="title is-4">Beef & Butter</p>
+                <p class="subtitle is-6">Junior IT Specialist | <time datetime="2021-03"> March 2021</time> - <time
+                    datetime="2021-08">August 2021</time></p>
+              </div>
+            </div>
+            <div class="content">
+              <p></p>
+              <ul>
+                <li>Seamlessly integrated restaurant profiles with delivery apps, ensuring accurate menu information and pricing.</li>
+                <li>Revamped website using HTML, CSS, and JavaScript, elevating online presence and user experience.</li>
+                <li>Collaborated with stakeholders for effective integration and documented technical changes.</li>
+                
+              </ul>
+              <div class="tags">
+                <span class="tag"></span>
+                <span class="tag"></span>
+                <span class="tag"></span>
+                <span class="tag"></span>
+                <span class="tag"></span>
+                <span class="tag"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section">
+      <div class="container">
+        <h1 class="title">Projects</h1>
+        <hr />
+        <div class="tile is-ancestor">
+          <div class="tile is-vertical is-12">
+            <div class="tile">
+              <div class="tile is-parent">
+                <article class="tile is-child notification experience-card experience-card">
+                  <p class="title">Bunny Game</p>
+                  <figure class="image is-3by2">
+                    <img class="modal-trigger" data-target="project-1-modal" src="img/project-1-cover.png">
+                  </figure>
+                </article>
+              </div>
+              <div class="tile is-parent">
+                <article class="tile is-child notification experience-card">
+                  <p class="title">Zombie Rage</p>
+                  <figure class="image is-4by3">
+                    <img class="modal-trigger" data-target="project-2-modal" src="img/project-2-cover.png">
+                  </figure>
+                </article>
+              </div>
+              <div class="tile is-parent">
+                <article class="tile is-child notification experience-card">
+                  <p class="title">Stox Predict</p>
+                  <figure class="image is-4by3">
+                    <img class="modal-trigger" data-target="project-3-modal" src="img/project-3-cover.png">
+                  </figure>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tile is-ancestor">
+          <div class="tile is-vertical is-12">
+            <div class="tile">
+              <div class="tile is-parent">
+                <article class="tile is-child notification experience-card">
+                  <p class="title">Flappy Birds Beater</p>
+                  <figure class="image is-4by3">
+                    <img class="modal-trigger" data-target="project-4-modal" src="img/project-4-cover.png">
+                  </figure>
+                </article>
+              </div>
+              <div class="tile is-parent">
+                <article class="tile is-child notification experience-card">
+                  <p class="title">Mind the Gap</p>
+                  <figure class="image is-4by3">
+                    <img class="modal-trigger" data-target="project-5-modal" src="img/project-5-cover.png">
+                  </figure>
+                </article>
+              </div>
+              <div class="tile is-parent">
+                <article class="tile is-child notification experience-card">
+                  <p class="title">Shape Wars</p>
+                  <figure class="image is-4by3">
+                    <img class="modal-trigger" data-target="project-6-modal" src="img/project-6-cover.png">
+                  </figure>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section">
+      <div class="container">
+        <h1 class="title">Education</h1>
+        <hr />
+        <div class="card experience-card">
+          <div class="card-content">
+            <div class="content">
+              <p class="title is-4">Memorial University of Newfoundland and Labrador</p>
+              <p class="subtitle is-6">Bachelor of Science | <time datetime="2020-09">September 2020</time> - <time
+                  datetime="2024-12">December 2024</time></p>
+            </div>
+            <div class="content">
+              Major in Computer Science with a Minor in Business Administration.
+              <div class="columns is-centered mt-4 ml-5">
+                <div class="column">
+                  <li>Data Structures and Algorithms</li>
+                  <li>Algorithms for AI</li>
+                  <li>Operating Systems</li>
+                  <li>Computer Networks</li>
+                </div>
+                <div class="column">
+                  <li>Cyber Security</li>
+                  <li>Software Engineering</li>
+                  <li>Computer Architecture</li>
+                  <li>Game Programming</li>
+                </div>
+              </div>  
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section">
+      <div class="container">
+        <h1 class="title">Contact</h1>
+        <hr />
+        <nav class="level experience-card">
           <div class="level-item has-text-centered">
-            <figure class="image is-128x128">
-              <img class="is-rounded" src="img/me-big.jpg">
+            <div>
+              <a href="https://github.com/EJ-20" target="_blank" class="icon is-large">
+                <i class="fab fa-2x fa-github"></i>
+              </a>
+              <p class="heading"><a href="https://github.com/EJ-20">Github</a></p>
+            </div>
+          </div>
+          <div class="level-item has-text-centered">
+            <div>
+              <a href="https://fullstackmark.com" class="icon is-large">
+                <i class="fas fa-2x fa-globe"></i>
+              </a>
+              <p class="heading"><a href="https://fullstackmark.com">fullstackmark.com</a></p>
+            </div>
+          </div>
+          <div class="level-item has-text-centered">
+            <div>
+              <a href="mailto:erfanj15@gmail.com" class="icon is-large">
+                <i class="fas fa-2x fa-envelope"></i>
+              </a>
+              <p class="heading"><a href="mailto:erfanj15@gmail.com">Email</a></p>
+            </div>
+          </div>
+          <div class="level-item has-text-centered">
+            <div>
+              <a href="https://www.linkedin.com/in/ej20/" class="icon is-large">
+                <i class="fab fa-2x fa-linkedin-in"></i>
+              </a>
+              <p class="heading"><a href="https://www.linkedin.com/in/ej20/">linkedin</a></p>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Modals -->
+    <div id="project-1-modal" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Project title</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+
+          <div id="project-1-modal-carousel" class="carousel">
+            <figure class="image is-4by3 carousel-cell">
+              <img src="img/carousel/1.png">
+            </figure>
+            <figure class="image is-4by3 carousel-cell">
+              <img src="img/carousel/2.png">
+            </figure>
+            <figure class="image is-4by3 carousel-cell">
+              <img src="img/carousel/3.png">
             </figure>
           </div>
-        </div>
-        <div class="columns has-text-centered">
-          <div class="column">
-            <h1 class="title is-1">
-              Erfan Jafar
-            </h1>
-            <h2 class="subtitle">
-              FullStack .NET Dev, Halifax, NS
-            </h2>
-            <p>
-              <a href="docs/resume.pdf" class="icon has-text-light" target="_blank">
-                <i class="fas fa-file-word"></i> <strong>Resume</strong>
-              </a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- About me -->
-  <section class="section">
-    <div class="container">
-      <h1 class="title">About Me</h1>
-      <hr />
-      <p>Hi, I’m Erfan Jafar, a passionate Software Engineer based in St. John’s, NL, with a strong background in software development, system troubleshooting, and data analysis. 
-        I am currently pursuing a Bachelor of Science in Computer Science, with a minor in Business Administration at Memorial University of Newfoundland, 
-        and will graduate in December 2024.</p>
-    </div>
-  </section>
-
-  <!-- Experience -->
-  <section class="section">
-    <div class="container">
-      <h1 class="title">Experience</h1>
-      <hr />
-      <div class="card">
-        <div class="card-content">
-          <div class="media">
-            <div class="media-left">
-              <figure class="image is-48x48">
-                <img src="img/innovmarine-logo.jpg" alt="Placeholder image">
-              </figure>
-            </div>
-            <div class="media-content">
-              <p class="title is-4">Innovmarine</p>
-              <p class="subtitle is-6">Junior Programmer Analyst Intern  | <time datetime="2023-01">January 2023</time> - <time
-                  datetime="2023-09">September 2023</time> </p>
-            </div>
-          </div>
           <div class="content">
-            <p></p>
-            <ul>
-              <li>Collaborated on a cross-functional team to create a SAAS web application using JavaScript, C#, Razor, Bootstrap, and HTML.</li>
-              <li>Conducted code reviews, thorough testing, ensuring adherence to best practices, functionality, quality, and user satisfaction.</li>
-              <li>Managed SQL databases, optimizing schema design and performance, identified and resolved software bugs.</li>
-              <li>Contributed to comprehensive documentation for ETL softwares, web applications, and database processes.</li>
-              <li>Developed VBA and PowerQuery ETL transformations, enhancing data quality.</li>
-              <li>Used PowerBI for data visualization and building relations between tables from SQL servers.</li>
-            </ul>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore
+              magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+              commodo
+              consequat.</p>
+
             <div class="tags">
-              <span class="tag">C#</span>
-              <span class="tag">JavaScript</span>
-              <span class="tag">Razor</span>
-              <span class="tag">Bootstrap</span>
-              <span class="tag">HTML</span>
-              <span class="tag">PowerBI</span>
-              <span class="tag">MySQL</span>
-              <span class="tag">PowerQuery</span>
+              <span class="tag">angular</span>
+              <span class="tag">mongo</span>
+              <span class="tag">typscript</span>
+              <span class="tag">node</span>
             </div>
+
           </div>
-        </div>
+
+        </section>
+        <footer class="modal-card-foot">
+          <button class="button is-success">Close</button>
+        </footer>
       </div>
-      <div class="card card-gap">
-        <div class="card-content">
-          <div class="media">
-            <div class="media-left">
-              <figure class="image is-48x48">
-                <img src="img/geeksquad-logo.jpg" alt="Placeholder image">
-              </figure>
-            </div>
-            <div class="media-content">
-              <p class="title is-4">GeekSquad</p>
-              <p class="subtitle is-6">In-store and In-home Computer Technician | <time datetime="2021-10"> October 2021</time> - <time
-                  datetime="">Present</time></p>
-            </div>
+    </div>
+
+    <div id="project-2-modal" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Project title</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+
+          <div id="project-2-modal-carousel" class="carousel">
+            <figure class="image is-4by3 carousel-cell">
+              <img src="img/carousel/1.png">
+            </figure>
+            <figure class="image is-4by3 carousel-cell">
+              <img src="img/carousel/2.png">
+            </figure>
+            <figure class="image is-4by3 carousel-cell">
+              <img src="img/carousel/3.png">
+            </figure>
           </div>
+
           <div class="content">
-            <p></p>
-            <ul>
-              <li>Diagnosed and resolved technical issues on laptops, desktops, and mobile devices, ensuring efficient service with an average 95% customer satisfaction rate.</li>
-              <li>Performed hardware repairs including hard drive replacements, RAM upgrades, and screen repairs, reducing service turnaround times by 20%.</li>
-              <li>Recommended appropriate technology solutions based on customer needs, contributing to an increase in sales of extended warranties and service plans by 10%.</li>
-              <li>Conducted home theater installations, including mounting TVs, setting up sound systems, and integrating smart home technologies for seamless entertainment experiences.</li>
-              <li>Managed multiple service appointments per day, adhering to strict schedules while maintaining high levels of service quality and professionalism.</li>
-            </ul>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore
+              magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+              commodo
+              consequat.</p>
+
             <div class="tags">
-              <span class="tag">System Diagnostics</span>
-              <span class="tag">Incident Resolution</span>
-              <span class="tag">Problem Solving</span>
-              <span class="tag">Time Management</span>
-              <span class="tag">Client Relationship</span>
-              <span class="tag">Scheduling</span>
+              <span class="tag">angular</span>
+              <span class="tag">mongo</span>
+              <span class="tag">typscript</span>
+              <span class="tag">node</span>
             </div>
+
           </div>
-        </div>
+
+        </section>
+        <footer class="modal-card-foot">
+          <button class="button is-success">Close</button>
+        </footer>
       </div>
-      <div class="card card-gap">
-        <div class="card-content">
-          <div class="media">
-            <div class="media-left">
-              <figure class="image is-48x48">
-                <img src="img/beefandbutter-logo.png" alt="Placeholder image">
-              </figure>
-            </div>
-            <div class="media-content">
-              <p class="title is-4">Beef & Butter</p>
-              <p class="subtitle is-6">Junior IT Specialist | <time datetime="2021-03"> March 2021</time> - <time
-                  datetime="2021-08">August 2021</time></p>
-            </div>
+    </div>
+
+    <div id="project-3-modal" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Project title</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+          <div id="project-3-modal-carousel" class="carousel">
+            <figure class="image is-4by3 carousel-cell">
+              <img src="img/carousel/1.png">
+            </figure>
+            <figure class="image is-4by3 carousel-cell">
+              <img src="img/carousel/2.png">
+            </figure>
+            <figure class="image is-4by3 carousel-cell">
+              <img src="img/carousel/3.png">
+            </figure>
           </div>
+
           <div class="content">
-            <p></p>
-            <ul>
-              <li>Seamlessly integrated restaurant profiles with delivery apps, ensuring accurate menu information and pricing.</li>
-              <li>Revamped website using HTML, CSS, and JavaScript, elevating online presence and user experience.</li>
-              <li>Collaborated with stakeholders for effective integration and documented technical changes.</li>
-              
-            </ul>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore
+              magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+              commodo
+              consequat.</p>
             <div class="tags">
-              <span class="tag"></span>
-              <span class="tag"></span>
-              <span class="tag"></span>
-              <span class="tag"></span>
-              <span class="tag"></span>
-              <span class="tag"></span>
+              <span class="tag">angular</span>
+              <span class="tag">mongo</span>
+              <span class="tag">typscript</span>
+              <span class="tag">node</span>
             </div>
           </div>
-        </div>
+
+        </section>
+        <footer class="modal-card-foot">
+          <button class="button is-success">Close</button>
+        </footer>
       </div>
     </div>
-  </section>
 
-  <!-- Projects -->
-  <section class="section">
-    <div class="container">
-      <h1 class="title">Projects</h1>
-      <hr />
-      <div class="tile is-ancestor">
-        <div class="tile is-vertical is-12">
-          <div class="tile">
-            <div class="tile is-parent">
-              <article class="tile is-child notification">
-                <p class="title">Bunny Game</p>
-                <figure class="image is-3by2">
-                  <img class="modal-trigger" data-target="project-1-modal" src="img/project-1-cover.png">
-                </figure>
-              </article>
-            </div>
-            <div class="tile is-parent">
-              <article class="tile is-child notification">
-                <p class="title">Zombie Rage</p>
-                <figure class="image is-4by3">
-                  <img class="modal-trigger" data-target="project-2-modal" src="img/project-2-cover.png">
-                </figure>
-              </article>
-            </div>
-            <div class="tile is-parent">
-              <article class="tile is-child notification">
-                <p class="title">Stox Predict</p>
-                <figure class="image is-4by3">
-                  <img class="modal-trigger" data-target="project-3-modal" src="img/project-3-cover.png">
-                </figure>
-              </article>
-            </div>
+    <div id="project-4-modal" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Project title</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+          <div id="project-4-modal-carousel" class="carousel">
+            <figure class="image is-4by3 carousel-cell">
+              <img src="img/carousel/1.png">
+            </figure>
+            <figure class="image is-4by3 carousel-cell">
+              <img src="img/carousel/2.png">
+            </figure>
+            <figure class="image is-4by3 carousel-cell">
+              <img src="img/carousel/3.png">
+            </figure>
           </div>
-        </div>
-      </div>
-      <div class="tile is-ancestor">
-        <div class="tile is-vertical is-12">
-          <div class="tile">
-            <div class="tile is-parent">
-              <article class="tile is-child notification">
-                <p class="title">Flappy Birds Beater</p>
-                <figure class="image is-4by3">
-                  <img class="modal-trigger" data-target="project-4-modal" src="img/project-4-cover.png">
-                </figure>
-              </article>
-            </div>
-            <div class="tile is-parent">
-              <article class="tile is-child notification">
-                <p class="title">Mind the Gap</p>
-                <figure class="image is-4by3">
-                  <img class="modal-trigger" data-target="project-5-modal" src="img/project-5-cover.png">
-                </figure>
-              </article>
-            </div>
-            <div class="tile is-parent">
-              <article class="tile is-child notification">
-                <p class="title">Portfolio</p>
-                <figure class="image is-4by3">
-                  <img class="modal-trigger" data-target="project-6-modal" src="img/project-6-cover.png">
-                </figure>
-              </article>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Education -->
-  <section class="section">
-    <div class="container">
-      <h1 class="title">Education / Training</h1>
-      <hr />
-      <div class="card">
-        <div class="card-content">
           <div class="content">
-            <p class="title is-4">School Name</p>
-            <p class="subtitle is-6">Program/Course - <time datetime="2016-9">September 2016</time> - <time
-                datetime="2019-9">Sepemter 2019</time></p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore
+              magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+              commodo
+              consequat.</p>
+            <div class="tags">
+              <span class="tag">angular</span>
+              <span class="tag">mongo</span>
+              <span class="tag">typscript</span>
+              <span class="tag">node</span>
+            </div>
           </div>
-          <div class="content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Phasellus nec iaculis mauris.
-            <ul>
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="card card-gap">
-        <div class="card-content">
-          <div class="content">
-            <p class="title is-4">School Name</p>
-            <p class="subtitle is-6">Program/Course - <time datetime="2015-9">September 2014</time> - <time
-                datetime="2015-9">Sepemter 2015</time></p>
-          </div>
-          <div class="content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Phasellus nec iaculis mauris.
-            <ul>
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-            </ul>
-          </div>
-        </div>
+
+        </section>
+        <footer class="modal-card-foot">
+          <button class="button is-success">Close</button>
+        </footer>
       </div>
     </div>
-  </section>
 
-  <!-- Contact -->
-  <section class="section">
-    <div class="container">
-      <h1 class="title">Contact</h1>
-      <hr />
-      <nav class="level">
-        <div class="level-item has-text-centered">
-          <div>
-            <a href="https://github.com/mmacneil" class="icon is-large">
-              <i class="fab fa-2x fa-github"></i>
-            </a>
-            <p class="heading"><a href="https://github.com/mmacneil">github.com/mmacneil</a></p>
+    <div id="project-5-modal" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Project title</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+          <div id="project-5-modal-carousel" class="carousel">
+            <figure class="image is-4by3 carousel-cell">
+              <img src="img/carousel/1.png">
+            </figure>
+            <figure class="image is-4by3 carousel-cell">
+              <img src="img/carousel/2.png">
+            </figure>
+            <figure class="image is-4by3 carousel-cell">
+              <img src="img/carousel/3.png">
+            </figure>
           </div>
-        </div>
-        <div class="level-item has-text-centered">
-          <div>
-            <a href="https://fullstackmark.com" class="icon is-large">
-              <i class="fas fa-2x fa-globe"></i>
-            </a>
-            <p class="heading"><a href="https://fullstackmark.com">fullstackmark.com</a></p>
+
+          <div class="content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore
+              magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+              commodo
+              consequat.</p>
+            <div class="tags">
+              <span class="tag">angular</span>
+              <span class="tag">mongo</span>
+              <span class="tag">typscript</span>
+              <span class="tag">node</span>
+            </div>
           </div>
-        </div>
-        <div class="level-item has-text-centered">
-          <div>
-            <a href="mailto:markmacneil@gmail.com" class="icon is-large">
-              <i class="fas fa-2x fa-envelope"></i>
-            </a>
-            <p class="heading"><a href="mailto:markmacneil@gmail.com">markmacneil@gmail.com</a></p>
-          </div>
-        </div>
-        <div class="level-item has-text-centered">
-          <div>
-            <a href="https://www.linkedin.com/in/markmacneilhfx" class="icon is-large">
-              <i class="fab fa-2x fa-linkedin-in"></i>
-            </a>
-            <p class="heading"><a href="https://www.linkedin.com/in/markmacneilhfx">linkedin</a></p>
-          </div>
-        </div>
-      </nav>
+
+        </section>
+        <footer class="modal-card-foot">
+          <button class="button is-success">Close</button>
+        </footer>
+      </div>
     </div>
-  </section>
 
-  <!-- Modals -->
-  <div id="project-1-modal" class="modal">
-    <div class="modal-background"></div>
-    <div class="modal-card">
-      <header class="modal-card-head">
-        <p class="modal-card-title">Project title</p>
-        <button class="delete" aria-label="close"></button>
-      </header>
-      <section class="modal-card-body">
-
-        <div id="project-1-modal-carousel" class="carousel">
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/1.png">
-          </figure>
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/2.png">
-          </figure>
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/3.png">
-          </figure>
-        </div>
-
-        <div class="content">
-
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore
-            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo
-            consequat.</p>
-
-          <div class="tags">
-            <span class="tag">angular</span>
-            <span class="tag">mongo</span>
-            <span class="tag">typscript</span>
-            <span class="tag">node</span>
+    <div id="project-6-modal" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Project title</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+          <div id="project-6-modal-carousel" class="carousel">
+            <figure class="image is-4by3 carousel-cell">
+              <img src="img/carousel/1.png">
+            </figure>
+            <figure class="image is-4by3 carousel-cell">
+              <img src="img/carousel/2.png">
+            </figure>
+            <figure class="image is-4by3 carousel-cell">
+              <img src="img/carousel/3.png">
+            </figure>
           </div>
 
-        </div>
-
-      </section>
-      <footer class="modal-card-foot">
-        <button class="button is-success">Close</button>
-      </footer>
-    </div>
-  </div>
-
-  <div id="project-2-modal" class="modal">
-    <div class="modal-background"></div>
-    <div class="modal-card">
-      <header class="modal-card-head">
-        <p class="modal-card-title">Project title</p>
-        <button class="delete" aria-label="close"></button>
-      </header>
-      <section class="modal-card-body">
-
-        <div id="project-2-modal-carousel" class="carousel">
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/1.png">
-          </figure>
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/2.png">
-          </figure>
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/3.png">
-          </figure>
-        </div>
-
-        <div class="content">
-
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore
-            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo
-            consequat.</p>
-
-          <div class="tags">
-            <span class="tag">angular</span>
-            <span class="tag">mongo</span>
-            <span class="tag">typscript</span>
-            <span class="tag">node</span>
+          <div class="content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore
+              magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+              commodo
+              consequat.</p>
+            <div class="tags">
+              <span class="tag">angular</span>
+              <span class="tag">mongo</span>
+              <span class="tag">typscript</span>
+              <span class="tag">node</span>
+            </div>
           </div>
 
-        </div>
-
-      </section>
-      <footer class="modal-card-foot">
-        <button class="button is-success">Close</button>
-      </footer>
+        </section>
+        <footer class="modal-card-foot">
+          <button class="button is-success">Close</button>
+        </footer>
+      </div>
     </div>
-  </div>
 
-  <div id="project-3-modal" class="modal">
-    <div class="modal-background"></div>
-    <div class="modal-card">
-      <header class="modal-card-head">
-        <p class="modal-card-title">Project title</p>
-        <button class="delete" aria-label="close"></button>
-      </header>
-      <section class="modal-card-body">
-        <div id="project-3-modal-carousel" class="carousel">
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/1.png">
-          </figure>
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/2.png">
-          </figure>
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/3.png">
-          </figure>
-        </div>
-
-        <div class="content">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore
-            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo
-            consequat.</p>
-          <div class="tags">
-            <span class="tag">angular</span>
-            <span class="tag">mongo</span>
-            <span class="tag">typscript</span>
-            <span class="tag">node</span>
-          </div>
-        </div>
-
-      </section>
-      <footer class="modal-card-foot">
-        <button class="button is-success">Close</button>
-      </footer>
-    </div>
-  </div>
-
-  <div id="project-4-modal" class="modal">
-    <div class="modal-background"></div>
-    <div class="modal-card">
-      <header class="modal-card-head">
-        <p class="modal-card-title">Project title</p>
-        <button class="delete" aria-label="close"></button>
-      </header>
-      <section class="modal-card-body">
-        <div id="project-4-modal-carousel" class="carousel">
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/1.png">
-          </figure>
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/2.png">
-          </figure>
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/3.png">
-          </figure>
-        </div>
-
-        <div class="content">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore
-            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo
-            consequat.</p>
-          <div class="tags">
-            <span class="tag">angular</span>
-            <span class="tag">mongo</span>
-            <span class="tag">typscript</span>
-            <span class="tag">node</span>
-          </div>
-        </div>
-
-      </section>
-      <footer class="modal-card-foot">
-        <button class="button is-success">Close</button>
-      </footer>
-    </div>
-  </div>
-
-  <div id="project-5-modal" class="modal">
-    <div class="modal-background"></div>
-    <div class="modal-card">
-      <header class="modal-card-head">
-        <p class="modal-card-title">Project title</p>
-        <button class="delete" aria-label="close"></button>
-      </header>
-      <section class="modal-card-body">
-        <div id="project-5-modal-carousel" class="carousel">
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/1.png">
-          </figure>
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/2.png">
-          </figure>
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/3.png">
-          </figure>
-        </div>
-
-        <div class="content">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore
-            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo
-            consequat.</p>
-          <div class="tags">
-            <span class="tag">angular</span>
-            <span class="tag">mongo</span>
-            <span class="tag">typscript</span>
-            <span class="tag">node</span>
-          </div>
-        </div>
-
-      </section>
-      <footer class="modal-card-foot">
-        <button class="button is-success">Close</button>
-      </footer>
-    </div>
-  </div>
-
-  <div id="project-6-modal" class="modal">
-    <div class="modal-background"></div>
-    <div class="modal-card">
-      <header class="modal-card-head">
-        <p class="modal-card-title">Project title</p>
-        <button class="delete" aria-label="close"></button>
-      </header>
-      <section class="modal-card-body">
-        <div id="project-6-modal-carousel" class="carousel">
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/1.png">
-          </figure>
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/2.png">
-          </figure>
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/3.png">
-          </figure>
-        </div>
-
-        <div class="content">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore
-            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo
-            consequat.</p>
-          <div class="tags">
-            <span class="tag">angular</span>
-            <span class="tag">mongo</span>
-            <span class="tag">typscript</span>
-            <span class="tag">node</span>
-          </div>
-        </div>
-
-      </section>
-      <footer class="modal-card-foot">
-        <button class="button is-success">Close</button>
-      </footer>
-    </div>
-  </div>
+</section>
 
   <footer class="footer">
     <div class="content has-text-centered">
