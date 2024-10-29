@@ -1,45 +1,357 @@
 @charset "utf-8";
 
-// https://github.com/metafizzy/flickity/issues/754
+// Import Flickity styles
 @import "~flickity/css/flickity.css";
 
-// Import Lato Google Font
+// Import Google Font
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900');
 
-// Update Bulma's global variables
-$family-sans-serif: "Lato", sans-serif;
-$widescreen-enabled: false;
-$fullhd-enabled: false;
 
-// More theme colors could be added here...
-$primary: #454545;
+// Update Bulma variables
+$primary: #23153C; // More muted primary color
+$accent: #ff6b6b; // Accent color for highlights
+$background-color: #23153C; // Light background color for sections
+$font-family: 'Lato', sans-serif;
+$font-color: #EEE4B1; // Set global font to Lato
 
-$spaces: ("0": 0, "1": 1.65rem, "2": 1.75rem);
-
-$margin-default: map-get($spaces, "2") map-get($spaces, "0");
-
-// Update some of Bulma's component & color variables
+// Custom Spacing & Colors
+$spaces: ("0": 0, "1": 1.65rem, "2": 2.5rem);
 $footer-padding: 3rem 1.5rem;
-$link: hsl(171, 100%, 41%);
+
+// Import Bulma
+@import "~bulma";
 
 // Custom Styles
-.card-gap {margin-top:1.75rem}
-.modal-trigger { cursor: pointer; }
-a.icon > strong {margin-left:.25rem}
-.modal-card-body div.content {margin:$margin-default}
-
-// import everything - alternatively import just what you need: https://bulma.io/documentation/overview/modular/
-@import "~bulma/bulma"; 
-
-// override specific bulma styles
-.section {padding: 2.15rem 1.5rem}
-
-@function theme-color($key: "primary") {
-    @return map-get($theme-colors, $key);
+body {
+    background-color: $background-color;
+    color: #2c3e50; // Darker font color for readability
+    font-family: $font-family;
 }
 
-// Flickity - begin
-.carousel-cell {width:100%}
-// Flickity - end
+h1.title, h2.subtitle {
+    color: $font-color; // White text for contrast
+}
 
- 
+h1.title {
+    font-size: 3rem; // Adjust as needed
+    color: $font-color;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5); // Add a shadow for depth
+}
+
+h2.subtitle {
+    font-size: 1.5rem;
+    color: $font-color ;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+p{
+    color: #00000000;
+}
+
+a {
+    color: $primary;
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+    
+    &:hover {
+        color: $accent;
+        text-decoration: underline;
+    }
+}
+
+a.icon > strong {
+    transition: color 0.3s, transform 0.3s;
+}
+
+a.icon:hover > strong {
+    color: #ffdd57; // Change to a bright color
+    transform: scale(1.05); // Slightly scale up
+}
+
+
+// Card Spacing
+.card-gap {
+    margin-top: map-get($spaces, "1");
+}
+
+// Modal Animation
+.modal {
+  background-color: $background-color;
+    transition: opacity 0.3s ease;
+    &.fade-in {
+        opacity: 1;
+    }
+    &.is-active {
+        opacity: 1;
+    }
+    &:not(.is-active) {
+        opacity: 0;
+    }
+}
+/* Modal Styling */
+.modal-card {
+  background-color: $background-color; /* Matches the website's primary background */
+  color: $font-color; /* Matches the font color across the site */
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.modal-card-head,
+.modal-card-foot {
+  background-color: lighten($background-color, 5%);
+  border: none;
+  color: $font-color;
+}
+
+.modal-card-title {
+  color: $accent; /* Accent color for title */
+  font-family: $font-family;
+  font-weight: bold;
+}
+
+.modal-background {
+  background-color: rgba(0, 0, 0, 0.6); /* Slight dark overlay */
+}
+
+/* Carousel Styling */
+.carousel {
+  margin: 1rem 0;
+  overflow: hidden;
+}
+
+.carousel-cell {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid $accent; /* Accent color border */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-cell img {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Button Styling */
+.modal-card-foot .button.is-success {
+  background-color: $accent;
+  color: $background-color;
+  border-color: $accent;
+}
+
+.modal-card-foot .button.is-success:hover {
+  background-color: darken($accent, 10%);
+  color: $font-color;
+}
+
+
+.image{
+    justify-content: center;
+    width: 100%;
+}
+// Section padding for cleaner spacing
+.section {
+    padding: 2.5rem 1.5rem;
+    min-height: 90vh; // Makes each section take up the full height of the viewport
+    display: flex; // Use flexbox for centering content
+    justify-content: center; // Horizontally center the content
+    overflow:scroll;
+    flex-wrap: wrap;
+    opacity: 0; /* Start with hidden sections */
+    transform: translateY(50px); /* Position them slightly below */
+    transition: opacity 1s ease, transform 1s ease; /* Smooth transition */
+    
+}
+
+/* When in view, the section will fade in */
+.section.is-visible {
+    opacity: 1;
+    transform: translateY(0); /* Moves to the original position */
+    animation: fadeInUp 1s ease both; /* Applies the fadeInUp animation */
+  }
+
+// Button Hover Animation
+.button {
+    background-color: $accent;
+    border-color: transparent;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    
+    &:hover {
+        background-color: lighten($accent, 10%);
+        transform: scale(1.05); // Slightly increase the size on hover
+    }
+}
+
+// Card Hover Animation
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+
+    &:hover {
+        transform: translateY(-10px); // Move the card up slightly on hover
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); // Increase shadow on hover
+    }
+}
+
+// Carousel Styling
+.carousel-cell {
+    width: 100%; // Full width
+    height: auto;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Soft shadow for aesthetics
+}
+
+.flickity-prev-next-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    
+    &:hover {
+        background-color: $accent;
+        transform: scale(1.1);
+    }
+}
+
+// Image Hover Animation
+img {
+    transition: transform 0.3s ease, filter 0.3s ease;
+
+    &:hover {
+        transform: scale(1.05);
+        filter: brightness(1.1); // Brighten image on hover
+    }
+}
+
+// Keyframe animations for background
+
+
+.container{
+    flex-grow: 0;
+    width: 100%;
+    clear: both;
+    min-height: 100;
+}
+
+.hero {
+    display: flex;
+    align-items: center;  // Vertically center the content
+    justify-content: center; // Horizontally center the content
+    min-height: 100vh; // Make sure the hero section takes the full height of the viewport
+  }
+  
+  .hero-body {
+    text-align: center; // Center text alignment for contents
+  }
+  
+  .container {
+    max-width: 800px; // Adjust max-width as necessary for content layout
+  }
+  
+
+.hero.is-primary {
+    animation: backgroundAnimation 10s ease infinite;
+    background-size: 200% 200%; /* This can help with gradient effects */
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.background-animation {
+    
+}
+
+* {
+    transition: all 0.3s ease; // Smooth transitions for all elements
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; // Ensures padding and border do not affect width
+}
+
+html {
+    scroll-behavior: smooth; // Smooth scrolling behavior
+    height: 100%;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.experience-card {
+    margin-bottom: 2rem; /* Add spacing between cards */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for a clean look */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    background-color: #9290C3;
+  
+    &:hover {
+      transform: translateY(-5px); /* Lift the card slightly on hover */
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+    }
+  }
+
+  /* Image styling */
+.experience-image {
+    max-width: 100%;  /* Ensure image scales properly within the container */
+    max-height: 100%; /* Ensure image stays within the bounds of the container */
+    transition: transform 0.5s ease;
+  }
+  
+  .experience-image:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+  }
+  
+  .experience-card .media-left figure {
+    border-radius: 50%; /* Make the images round */
+    overflow: hidden;
+  }
+  
+  .experience-card .card-content {
+    padding: 1.5rem; /* Add some padding inside the cards */
+  }
+  
+  .experience-card .tags .tag {
+    background-color: #f5f5f5;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    padding: 0.4em 0.8em;
+    font-size: 0.85rem;
+  }
+  
+  .experience-card h1.title, .experience-card h2.subtitle {
+    color: $font-color;
+  }
+  
+  .experience-card .content ul {
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+  }
+  
+  .experience-card .media-content p.subtitle {
+    font-style: italic;
+  }
+  
+  hr {
+    border: 0;
+    height: 1px;
+    background: #ddd;
+    margin-bottom: 2rem;
+  }
+
+  /* Animation for sections */
+@keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(50px); /* Start 50px below */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* End at its normal position */
+    }
+  }
+  

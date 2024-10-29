@@ -1,70 +1,89 @@
+// Import styles and libraries
 require('./styles.scss');
-
-var Flickity = require('flickity');
+const Flickity = require('flickity');
 require('flickity-imagesloaded');
 
-var $carousels = new Array();
+let carousels = []; // Store initialized carousel instances
 
-// Modals
+// Handle modal functionality
+const rootEl = document.documentElement;
+const modals = document.querySelectorAll('.modal');
+const modalTriggers = document.querySelectorAll('.modal-trigger');
+const modalCloses = document.querySelectorAll('.modal-card-head .delete, .modal-card-foot .button');
 
-var rootEl = document.documentElement;
-var $modals = getAll('.modal');
-var $modalTriggers = getAll('.modal-trigger');
-var $modalCloses = getAll('.modal-card-head .delete, .modal-card-foot .button');
-
-if ($modalTriggers.length > 0) {
-    $modalTriggers.forEach(function ($el) {
-        $el.addEventListener('click', function () {
-            var target = $el.dataset.target;
-            openModal(target);
-        });
+// Open modal and initialize carousel if necessary
+modalTriggers.forEach((trigger) => {
+    trigger.addEventListener('click', () => {
+        const target = trigger.dataset.target;
+        openModal(target);
     });
-}
+});
 
-if ($modalCloses.length > 0) {
-    $modalCloses.forEach(function ($el) {
-        $el.addEventListener('click', function () {
-            closeModals();
-        });
-    });
-}
+// Close modals on button click
+modalCloses.forEach((closeButton) => {
+    closeButton.addEventListener('click', closeModals);
+});
 
+// Open modal function with smooth animation
 function openModal(target) {
-    var $target = document.getElementById(target);
+    const modal = document.getElementById(target);
     rootEl.classList.add('is-clipped');
-    $target.classList.add('is-active');
-    var carouselId = target + '-carousel';
+    modal.classList.add('is-active', 'fade-in'); // Add fade-in class for smooth animation
 
-    if (document.querySelector('#' + carouselId)) {
-        // Initialize each carousel one time only
-        if ($carousels.length === 0) {
-            $carousels.push(initCarousel(carouselId));
-        }
-        else {
-            var index = $carousels.findIndex(c => c.element.id == carouselId);
-            if (index === -1) {
-                $carousels.push(initCarousel(carouselId));
-            }
+    const carouselId = `${target}-carousel`;
+
+    if (document.querySelector(`#${carouselId}`)) {
+        if (!carousels.find(c => c.element.id === carouselId)) {
+            carousels.push(initCarousel(carouselId)); // Initialize carousel only once
         }
     }
 }
 
+// Close modals with smooth animation
 function closeModals() {
-    rootEl.classList.remove('is-clipped');
-    $modals.forEach(function ($el) {
-        $el.classList.remove('is-active');
+    modals.forEach(modal => {
+        modal.classList.remove('is-active');
+        setTimeout(() => rootEl.classList.remove('is-clipped'), 300); // Delay for animation
     });
 }
 
-// Functions
-
+// Initialize carousel
 function initCarousel(id) {
-    return new Flickity('#' + id, {
+    return new Flickity(`#${id}`, {
         imagesLoaded: true,
-        adaptiveHeight: true // https://github.com/metafizzy/flickity/issues/11
+        adaptiveHeight: true,
+        wrapAround: true, // Infinite loop
+        autoPlay: 3000, // Autoplay every 3 seconds
+        pauseAutoPlayOnHover: true,
+        pageDots: false, // Hide dots for cleaner look
+        prevNextButtons: true // Show navigation buttons
     });
 }
 
+// Utility to get all matching elements
 function getAll(selector) {
-    return Array.prototype.slice.call(document.querySelectorAll(selector), 0);
+    return Array.from(document.querySelectorAll(selector));
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const sections = document.querySelectorAll('.section'); // Target all sections
+    
+    const options = {
+      threshold: 0.25, // Trigger when 25% of the section is visible
+    };
+    
+    const observer = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible'); // Add class when section is in view
+          observer.unobserve(entry.target); // Stop observing once it's visible
+        }
+      });
+    }, options);
+    
+    sections.forEach(section => {
+      observer.observe(section); // Observe each section
+    });
+  });
+  
+
