@@ -118,6 +118,9 @@ a.icon:hover > strong {
 .modal-background {
   background-color: rgba(0, 0, 0, 0.6); /* Slight dark overlay */
 }
+.flickity-enabled{
+  position: static;
+}
 
 /* Carousel Styling */
 .carousel {
