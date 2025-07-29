@@ -8,12 +8,12 @@
 
 
 // Update Bulma variables
-$primary: #000435; // More muted primary color
-$accent: #ff6b6b; // Accent color for highlights
-$background-color: #000435; // Light background color for sections
+$primary: #5e60ce; // More muted primary color
+$accent: #5e60ce; // Accent color for highlights
+$background-color: #f8fafc; // Light background color for sections
 $font-family: 'Lato', sans-serif;
-$font-color: #EEE4B1; // Set global font to Lato
-$light-blue: #8dbeeb;
+$font-color: #22223b; // Set global font to Lato
+$light-blue: #a3cef1;
 
 // Custom Spacing & Colors
 $spaces: ("0": 0, "1": 1.65rem, "2": 2.5rem);
@@ -22,15 +22,37 @@ $footer-padding: 3rem 1.5rem;
 // Import Bulma
 @import "~bulma";
 
+// Color variables for light mode
+:root {
+  --bg-color: #f8fafc; /* very light, almost white */
+  --text-color: #22223b; /* deep blue-gray for contrast */
+  --card-bg: #ffffff; /* pure white cards */
+  --card-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  --tag-bg: #e0e7ef;
+  --tag-color: #22223b;
+  --navbar-bg: #a3cef1; /* soft blue */
+  --navbar-text: #22223b;
+  --accent: #5e60ce; /* modern purple accent */
+}
+
+// Bulma variable overrides for a lighter look
+$primary: #5e60ce;
+$accent: #5e60ce;
+$background-color: #f8fafc;
+$font-color: #22223b;
+$light-blue: #a3cef1;
+
 // Custom Styles
 body {
-    background-color: $background-color;
-    color: #2c3e50; // Darker font color for readability
-    font-family: $font-family;
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: $font-family;
+  transition: background 0.3s, color 0.3s;
 }
 
 h1.title, h2.subtitle {
-    color: $font-color; // White text for contrast
+  color: var(--text-color);
+  transition: color 0.3s;
 }
 
 h1.title {
@@ -324,12 +346,13 @@ main{
   }
   
   .experience-card .tags .tag {
-    background-color: #f5f5f5;
-    color: #333;
-    border: none;
-    border-radius: 5px;
-    padding: 0.4em 0.8em;
-    font-size: 0.85rem;
+    background: var(--tag-bg);
+    color: var(--tag-color);
+    border-radius: 6px;
+    margin: 2px 4px;
+    padding: 0.3em 0.8em;
+    font-weight: 500;
+    transition: background 0.3s, color 0.3s;
   }
   
   .experience-card h1.title, .experience-card h2.subtitle {
@@ -363,4 +386,35 @@ main{
       transform: translateY(0); /* End at its normal position */
     }
   }
+  
+  // Dark mode overrides
+body.dark-mode {
+  --bg-color: #232946;
+  --text-color: #e0e6ed;
+  --card-bg: #23272b;
+  --card-shadow: 0 2px 8px rgba(0,0,0,0.32);
+  --tag-bg: #2d3748;
+  --tag-color: #e0e6ed;
+  --navbar-bg: #232946;
+  --navbar-text: #e0e6ed;
+  --accent: #5e60ce;
+}
+
+body.dark-mode .typing-effect {
+  border-right: 2px solid #e0e6ed;
+}
+
+.typing-effect {
+  font-family: monospace;
+  white-space: nowrap;
+  border-right: 2px solid #222;
+  width: fit-content;
+  overflow: hidden;
+  animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: inherit; }
+}
   
