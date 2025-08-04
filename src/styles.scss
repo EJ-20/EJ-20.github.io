@@ -8,12 +8,12 @@
 
 
 // Update Bulma variables
-$primary: #000435; // More muted primary color
-$accent: #ff6b6b; // Accent color for highlights
-$background-color: #000435; // Light background color for sections
+$primary: #ffffff; // More muted primary color
+$accent: #5e60ce; // Accent color for highlights
+$background-color: #f8fafc; // Light background color for sections
 $font-family: 'Lato', sans-serif;
-$font-color: #EEE4B1; // Set global font to Lato
-$light-blue: #8dbeeb;
+$font-color: #22223b; // Set global font to Lato
+$light-blue: #87934e;
 
 // Custom Spacing & Colors
 $spaces: ("0": 0, "1": 1.65rem, "2": 2.5rem);
@@ -22,31 +22,53 @@ $footer-padding: 3rem 1.5rem;
 // Import Bulma
 @import "~bulma";
 
+// Color variables for light mode
+:root {
+  --bg-color: #f8fafc; /* very light, almost white */
+  --text-color: #22223b; /* deep blue-gray for contrast */
+  --card-bg: #ffffff; /* pure white cards */
+  --card-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  --tag-bg: #e0e7ef;
+  --tag-color: #22223b;
+  --navbar-text: #22223b;
+  --accent: #5e60ce; /* modern purple accent */
+}
+
+// Bulma variable overrides for a lighter look
+$primary: #5e60ce;
+$accent: #5e60ce;
+$background-color: #f8fafc;
+$font-color: #22223b;
+$light-blue: #a3cef1;
+
 // Custom Styles
 body {
-    background-color: $background-color;
-    color: #2c3e50; // Darker font color for readability
-    font-family: $font-family;
+  background: var(--bg-color);
+  height: 100%;
+  color: var(--text-color);
+  font-family: $font-family;
+  transition: background 0.3s, color 0.3s;
 }
 
 h1.title, h2.subtitle {
-    color: $font-color; // White text for contrast
+  transition: color 0.3s;
+  color: var(--text-color);
 }
 
 h1.title {
     font-size: 3rem; // Adjust as needed
-    color: $font-color;
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5); // Add a shadow for depth
+    color: var(--text-color);
 }
 
 h2.subtitle {
     font-size: 1.5rem;
-    color: $font-color ;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    color: var(--text-color);
 }
 
 p{
-    color: white;
+  color: var(--text-color);
 }
 
 a {
@@ -268,9 +290,16 @@ img {
     justify-content: center;
 }
 
-.background-animation {
-    
+#vanta-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
 }
+
+
 
 * {
     transition: all 0.3s ease; // Smooth transitions for all elements
@@ -324,12 +353,13 @@ main{
   }
   
   .experience-card .tags .tag {
-    background-color: #f5f5f5;
-    color: #333;
-    border: none;
-    border-radius: 5px;
-    padding: 0.4em 0.8em;
-    font-size: 0.85rem;
+    background: var(--tag-bg);
+    color: var(--tag-color);
+    border-radius: 6px;
+    margin: 2px 4px;
+    padding: 0.3em 0.8em;
+    font-weight: 500;
+    transition: background 0.3s, color 0.3s;
   }
   
   .experience-card h1.title, .experience-card h2.subtitle {
@@ -364,3 +394,46 @@ main{
     }
   }
   
+  // Dark mode overrides
+body.dark-mode {
+  --bg-color: #232946;
+  --text-color: #e0e6ed;
+  --card-bg: #23272b;
+  --card-shadow: 0 2px 8px rgba(0,0,0,0.32);
+  --tag-bg: #2d3748;
+  --tag-color: #e0e6ed;
+  --navbar-bg: #232946;
+  --navbar-text: #e0e6ed;
+  --accent: #5e60ce;
+
+}
+
+body.dark-mode .typing-effect {
+  border-right: 2px solid #e0e6ed;
+}
+
+.typing-effect {
+  font-family: monospace;
+  white-space: nowrap;
+  border-right: 2px solid #222;
+  overflow: hidden;
+  animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: inherit; }
+}
+  
+
+.navbar, .hero {
+  background-color: transparent;
+  color: transparent;
+  position: fixed;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+}
+
+.navbar a, .hero h1, .hero h2, .hero p {
+  color: var(--navbar-text);
+}
