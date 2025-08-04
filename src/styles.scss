@@ -13,7 +13,7 @@ $accent: #5e60ce; // Accent color for highlights
 $background-color: #f8fafc; // Light background color for sections
 $font-family: 'Lato', sans-serif;
 $font-color: #22223b; // Set global font to Lato
-$light-blue: #a3cef1;
+$light-blue: #87934e;
 
 // Custom Spacing & Colors
 $spaces: ("0": 0, "1": 1.65rem, "2": 2.5rem);
@@ -44,6 +44,7 @@ $light-blue: #a3cef1;
 // Custom Styles
 body {
   background: var(--bg-color);
+  height: 100%;
   color: var(--text-color);
   font-family: $font-family;
   transition: background 0.3s, color 0.3s;
@@ -289,9 +290,16 @@ img {
     justify-content: center;
 }
 
-.background-animation {
-    
+#vanta-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
 }
+
+
 
 * {
     transition: all 0.3s ease; // Smooth transitions for all elements

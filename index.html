@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<div id="vanta-bg"></div>
 <head>
   <title>Erfan Jafar's Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="dist/css/main.bundle.css">
-  <script src="https://kit.fontawesome.com/4e5a72c756.js"></script>
-  <script src=""></script>
+  <script src="https://kit.fontawesome.com/4e5a72c756.js" crossorigin="anonymous"></script></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.topology.min.js"></script>
+
   
 
 </head>
 
 <!-- Header -->
 <body>
+  <div id="vanta-bg"></div>
+
+
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <div class="navbar-item is-hidden-desktop">
@@ -50,11 +55,19 @@
     </div>
   </nav>
 
+
+
+    <script>
+      
+    </script>
+    
+
   <section>
 
 
     <!-- Intro -->
     <section id= "background-animation" class="">
+
         <div class="container">
           <div class="level">
             <div class="level-item has-text-centered">
@@ -75,32 +88,33 @@
 
       </div>
 
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.topology.min.js"></script>
+      
       <script>
-        let vantaEffect = null;
-        const themeToggle = document.getElementById('theme-toggle');
-        function initVanta() {
-          // Remove previous effect if exists
-          if (vantaEffect) {
-            vantaEffect.destroy();
-          }
-          // Set colors based on mode
-          const isDark = document.body.classList.contains('dark-mode');
-          vantaEffect = VANTA.TOPOLOGY({
-            el: "#background-animation",
-            mouseControls: true,
-            touchControls: true,
-            gyroControls: false,
-            minHeight: 200.00,
-            minWidth: 200.00,
-            scale: 1.00,
-            scaleMobile: 1.00,
-            color: isDark ? 0x5e60ce : 0x87934e, // purple for dark, green for light
-            backgroundColor: isDark ? 0x232946 : 0xf8fafc // match your palette
-          });
-        }
 
+let vantaEffect = null;
+      const themeToggle = document.getElementById('theme-toggle');
+      function initVanta() {
+        // Remove previous effect if exists
+        if (vantaEffect) {
+          vantaEffect.destroy();
+        }
+        // Set colors based on mode
+        const isDark = document.body.classList.contains('dark-mode');
+        vantaEffect = VANTA.TOPOLOGY({
+          el: "#vanta-bg",
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.00,
+          minWidth: 200.00,
+          scale: 1.00,
+          scaleMobile: 1.00,
+          color: isDark ? 0x5e60ce : 0x87934e, // purple for dark, green for light
+          backgroundColor: isDark ? 0x232946 : 0xf8fafc // match your palette
+        });
+      }
+
+      
         document.addEventListener("DOMContentLoaded", function() {
           const text = "Software Developer, Programmer Analyst";
           const tagline = document.getElementById("typing-tagline");
@@ -123,6 +137,7 @@
             setTimeout(initVanta, 350); // Wait for class toggle/transition
           });
         }
+
       </script>
     </section>
 
@@ -138,7 +153,7 @@
   
 
         
-          <!-- Slideshow Section -->
+          <!-- Slideshow Section 
         <div class="carousel" data-flickity='{ "cellAlign": "left", "contain": true, "autoPlay": true, "pauseAutoPlayOnHover": true }'>
           <div class="carousel-cell">
               <img src="img/ej1.jpg" alt="Description of image 1">
@@ -148,7 +163,7 @@
           </div>
           <div class="carousel-cell">
               <img src="img/ej3.jpg" alt="Description of image 3">
-          </div>
+          </div>-->
       </div>
       </div>
     </section>
