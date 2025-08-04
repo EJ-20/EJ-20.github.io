@@ -55,6 +55,11 @@ h1.title, h2.subtitle {
   color: var(--text-color);
 }
 
+h3{
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+}
+
 h1.title {
     font-size: 3rem; // Adjust as needed
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5); // Add a shadow for depth
@@ -184,7 +189,7 @@ a.icon:hover > strong {
 // Section padding for cleaner spacing
 .section {
     padding: 2.5rem 1.5rem;
-    min-height: 90vh; // Makes each section take up the full height of the viewport
+    min-height: 40vh; // Makes each section take up the full height of the viewport
     display: flex; // Use flexbox for centering content
     justify-content: center; // Horizontally center the content
     overflow:scroll;
