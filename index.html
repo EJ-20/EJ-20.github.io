@@ -136,6 +136,12 @@ let vantaEffect = null;
         if (themeToggle) {
           themeToggle.addEventListener('click', function() {
             setTimeout(initVanta, 350); // Wait for class toggle/transition
+
+            // PostHog event
+            posthog.capture('Theme Toggled', {
+              mode: isDark ? 'dark' : 'light'
+            });
+
           });
         }
 
@@ -740,6 +746,42 @@ let vantaEffect = null;
         setTheme(!document.body.classList.contains('dark-mode'));
       });
     }
+  </script>
+
+  <script>
+    let startTime = Date.now();
+    let maxScrollPercent = 0;
+    const milestones = [25, 50, 75, 100];
+    let firedMilestones = new Set();
+
+    window.addEventListener('scroll', function () {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = Math.round((scrollTop / docHeight) * 100);
+
+      if (scrollPercent > maxScrollPercent) {
+        maxScrollPercent = scrollPercent;
+      }
+
+      milestones.forEach((milestone) => {
+        if (scrollPercent >= milestone && !firedMilestones.has(milestone)) {
+          posthog.capture('Reached Scroll Milestone', {
+            milestone_percent: milestone
+          });
+          firedMilestones.add(milestone);
+        }
+      });
+    });
+
+    window.addEventListener('beforeunload', function () {
+      const timeSpent = Math.round((Date.now() - startTime) / 1000);
+      posthog.capture('Time on Page', {
+        duration_seconds: timeSpent
+      });
+      posthog.capture('Scroll Depth', {
+        scroll_percent: maxScrollPercent
+      });
+    });
   </script>
 
 </body>
