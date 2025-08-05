@@ -192,7 +192,6 @@ a.icon:hover > strong {
     min-height: 40vh; // Makes each section take up the full height of the viewport
     display: flex; // Use flexbox for centering content
     justify-content: center; // Horizontally center the content
-    overflow:scroll;
     flex-wrap: wrap;
     opacity: 0; /* Start with hidden sections */
     transform: translateY(50px); /* Position them slightly below */
