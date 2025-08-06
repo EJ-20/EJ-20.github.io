@@ -378,6 +378,107 @@ main{
   .experience-card .media-content p.subtitle {
     font-style: italic;
   }
+
+
+  .project-card {
+    display: flex; // Make the card a flex container
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: $light-blue;
+    padding: 1.5rem;
+    gap: 1.5rem; // Space between image and content
+  
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+  
+    .media-left {
+      flex-shrink: 0;
+  
+      figure {
+        margin: 0;
+        width: 128px;
+        height: 128px;
+  
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 8px;
+        }
+      }
+    }
+
+    .media-bottom {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: flex-start;
+  
+      .tags {
+        flex-wrap: wrap;
+  
+        .tag {
+          background: var(--tag-bg);
+          color: var(--tag-color);
+          border-radius: 6px;
+          margin: 2px 4px;
+          padding: 0.3em 0.8em;
+          font-weight: 500;
+          transition: background 0.3s, color 0.3s;
+        }
+      }
+    }
+  
+    .card-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+  
+      .media-content {
+        margin-bottom: 0.5rem;
+  
+        .title {
+          color: $font-color;
+          font-size: 1.5rem;
+          margin-bottom: 0.2rem;
+        }
+  
+        .subtitle {
+          font-style: italic;
+          color: $font-color;
+          font-size: 1rem;
+        }
+      }
+  
+      .content {
+        color: $font-color;
+  
+        p {
+          margin-left: 0.75rem;
+        }
+  
+        .tags {
+          display: flex;
+          flex-wrap: wrap;
+  
+          .tag {
+            background: var(--tag-bg);
+            color: var(--tag-color);
+            border-radius: 6px;
+            margin: 2px 4px;
+            padding: 0.3em 0.8em;
+            font-weight: 500;
+            transition: background 0.3s, color 0.3s;
+          }
+        }
+      }
+    }
+  }
   
   hr {
     border: 0;
